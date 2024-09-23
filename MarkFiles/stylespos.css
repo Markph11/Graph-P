@@ -1,0 +1,509 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  /* Reset some default styles */
+  * {
+  margin: 0;
+  box-sizing: border-box;
+  }
+  
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #ebe9e9;
+  color: #3a3a3a;
+  }
+  
+  .container {
+  display: flex;
+  }
+  
+  /* Sidebar Menu */
+  
+  .sidebar {
+  width: 150px;
+  min-width: 250px;
+  max-width: 250px;
+  max-height: 170vh;
+  background-color: #333;
+  color: #f3eded;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  }
+  
+  /* Sidebar Menu */
+  .sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+  
+  /* Hide scrollbar but allow scrolling */
+  
+  .sidebar {
+  scrollbar-width: none; /* For Firefox */
+  }
+  
+  .sidebar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+  }
+  .sidebar-menu li {
+  margin-bottom: 15px;
+  }
+  
+  .sidebar-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  }
+  
+  .sidebar-menu a:hover {
+  background-color: #444;
+  }
+  
+  /* scrollbar */
+  
+  
+  
+  .sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+  }
+  
+  .sidebar ul li {
+  list-style-type: none;
+  }
+  
+  
+  .sidebar ul li a {
+  padding-left: 10px;
+  }
+  
+  .sidebar.active {
+  transform: translateX(0);
+  }
+  
+  /* Hide sidebar by default on smaller screens */
+  
+  @media (max-width: 768px) {
+  .sidebar {
+  transform: translateX(-100%);
+  position: absolute;
+  z-index: 10;
+  }
+  
+  .nav-toggle.active ~ .sidebar {
+  transform: translateX(0);
+  }
+  }
+  
+  /* For Logo */
+  
+  .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  }
+  
+  .logo-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+  }
+  
+  .logo h2 {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  }
+  
+  .logo {
+  text-align: center;
+  margin-bottom: 30px;
+  }
+  
+  .logo-img {
+  width: 100px;
+  height: auto;
+  }
+  
+  
+  /* Menu stylees */
+  
+  .menu {
+  list-style-type: none;
+  padding: 0;
+  }
+  
+  .menu ul {
+  padding-left: 0;
+  }
+  
+  .menu-header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  }
+  
+  .menu li {
+  margin-bottom: 10px;
+  }
+  
+  .menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #979797;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+  }
+  
+  .menu li a.active,
+  .menu li a:hover {
+  background-color: #ffdd00;
+  color: #333;
+  }
+  
+  .menu li a .icon {
+  margin-right: 10px;
+  font-size: 1em;
+  vertical-align: middle;
+  }
+  
+  
+  /* Main Content */
+  
+  .main-content {
+  flex: 1;
+  padding: 20px;
+  }
+  
+  /* Style the header */
+  
+  /* Profile Section */
+  
+  .profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  }
+  
+  .profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1px;
+  }
+  
+  .profile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  }
+  
+  .profile-button:hover {
+  background-color: #f0f0f0;
+  }
+  
+  .profile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 1000;
+  overflow: hidden;
+  }
+  
+  .profile-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  }
+  
+  .profile-menu a:hover {
+  background-color: #f0f0f0;
+  }
+  
+  /* Show the dropdown */
+  
+  .profile-menu.show {
+  display: block;
+  }
+  
+  /* Header styles */
+  
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+  background-color: #fffb00;
+  margin-bottom: 10px;
+  text-align: center;
+  }
+  
+  
+  .header-left {
+  display: flex;
+  align-items: center;
+  }
+  
+  .header-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 20px;
+  }
+  
+  .header h1 {
+  font-size: 24px;
+  margin: 0;
+  }
+  
+  .header-right {
+  display: flex;
+  align-items: center;
+  }
+  
+
+
+/* Container for 2 columns */
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  }
+  
+  /* Column 1: Categories & Products */
+  .column-1 {
+  flex-basis: 65%; /* Takes 65% of the space */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Categories Section */
+  .categories {
+  margin-bottom: 20px;
+  }
+  
+  .categories h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+  }
+  
+  /* Category Grid */
+  .category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  }
+  
+  .category-card {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  }
+  
+  .category-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+  .category-grid {
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+  
+  .product-grid {
+  grid-template-columns: repeat(2, 1fr); /* 2 products per row on tablets */
+  }
+  }
+  
+  @media (max-width: 480px) {
+  .category-grid, .product-grid {
+  grid-template-columns: 1fr; /* 1 item per row on small screens */
+  }
+  }
+  
+  
+  /* Products Section */
+  .products {
+  flex-basis: 75%;
+  background-color: #ffffff;
+  }
+  
+  .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  }
+  
+  .product-card {
+  background-color: #ffd900;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+  width: 100px;
+  height: auto;
+  }
+  
+  .product-card h3 {
+  margin: 10px 0;
+  }
+  
+  /* Style for the 'Add to Order' Button */
+.add-to-order {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+}
+
+/* Hover Effect for the 'Add to Order' Button */
+.add-to-order:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-3px); /* Slightly raises the button when hovered */
+}
+
+
+  /* Column 2: Order, Payment Method, and Total */
+.column-2 {
+    flex-basis: 30%; /* Takes 30% of the space */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Order Items Section */
+.order-items {
+    margin-bottom: 20px;
+}
+
+.order-items h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.order-items ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 16px;
+}
+
+.order-items li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Payment Method Section */
+.payment-method h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.payment-method form {
+    margin-bottom: 20px;
+}
+
+.payment-method label {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Total Section */
+.order-total h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.checkout {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for Checkout button */
+.checkout:hover {
+    background-color: #ffb700;
+}

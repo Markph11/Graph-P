@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ecf011;
+    padding: 10px 20px;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px; 
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Navbar */
+
+.nav a {
+    margin-left: 20px;
+    padding: 5px 10px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease; 
+}
+
+.nav a:hover {
+    background-color: #ffd000; 
+}
+
+/* Login */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    background: url('Image/background.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+    overflow: hidden;
+    position: relative; 
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.login-form {
+    background: #fff;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2; 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInUp 1s forwards; 
+}
+
+.login-form h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Input */
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-group i {
+    position: absolute;
+    top: 37px;
+    right: 10px;
+    color: #888;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px 10px 10px 10px; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Button */
+
+button {
+    width: 30%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Animation Keyframes */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ecf011;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px; /* Adjust based on your actual logo size */
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    color: #000;
+}
+
+.nav a {
+    margin-left: 20px;
+    padding: 5px 10px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease; /* Adds smooth transition effect */
+}
+
+.nav a:hover {
+    background-color: #ffd000; /* Yellow background on hover */
+}
+
+.forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    background: url('Image/background.jpg') no-repeat center center fixed; /* Ensure fixed background */
+    background-size: cover; /* Ensure the background covers the container */
+    background-attachment: fixed; /* Keeps the background fixed */
+    background-position: center; /* Centers the background image */
+    overflow: hidden;
+    position: relative; /* To position the overlay correctly */
+}
+
+.forgot-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Place it behind the form */
+}
+
+.forgot-form {
+    background: #fff;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2; /* Higher z-index to be above the overlay */
+    opacity: 0; /* Initial state for fade-in animation */
+    transform: translateY(20px); /* Initial state for slide-up effect */
+    animation: fadeInUp 1s forwards; /* Animation name and duration */
+}
+
+
+
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-group i {
+    position: absolute;
+    top: 37px;
+    right: 10px;
+    color: #888;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px 10px 10px 10px; /* Added left padding for icon space */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 40%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deleted Accounts</title>
+<link rel="stylesheet" href="stylesdelete.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS (for modal functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- Nav Toggle Button for Mobile -->
+    <button class="nav-toggle btn btn-primary d-md-none" id="navToggle">&#9776;</button>
+    <div class="row">
+        <!-- Sidebar -->
+        <aside class="sidebar col-md-3 col-lg-2 d-none d-md-block">
+            <div class="logo text-center my-3">
+                <img src="Image/logo.png" alt="Logo" class="logo-img img-fluid">
+                <h2 class="text-white">Graph Printing (POS)</h2>
+            </div>
+            <nav class="menu">
+              <ul>
+                  <li class="menu-header">Main</li>
+                  <li><a href="admin.html" class="icon"><span class="icon">👤</span> Admin Dashboard</a></li>
+              </ul>
+            
+              <ul>
+                  <li class="menu-header">User Management</li>
+                  <li><a href="users.html"><span class="icon">👥</span> Users</a></li>
+                  <li><a href="roles.html"><span class="icon">🛠</span> Roles & Permissions</a></li>
+                  <li><a href="delete.html"><span class="icon">🔒</span> Deleted Accounts</a></li>
+              </ul>
+            
+              <ul>
+                  <li class="menu-header">Inventory Management</li>
+                  <li><a href="products.html"><span class="icon">📦</span> Products & Create Products</a></li>
+                  <li><a href="InventoryReports.html"><span class="icon">📊</span> Inventory Reports</a></li>
+              </ul>
+              <ul>
+                <li class="menu-header">Peoples</li>
+                <li><a href="#"><span class="icon">👥</span> Customers </a></li> <!-- Customers icon added -->
+                <li><a href="#"><span class="icon">🏢</span> Suppliers </a></li> <!-- Suppliers icon added -->
+              </ul>
+              <ul>
+                <li class="menu-header">Purchases</li>
+                <li><a href="#"><span class="icon">🛍️</span> Purchases </a></li> <!-- Purchases icon added -->
+              </ul>
+              <ul>
+                <li class="menu-header">Sales</li>
+                <li><a href="#"><span class="icon">💰</span> Sales </a></li> <!-- Sales icon added -->
+                <li><a href="pos.html"><span class="icon">🛒</span> Point of Sales </a></li>
+              </ul>
+            
+              <ul>
+                  <li class="menu-header">Settings</li>
+                  <li><a href="#"><span class="icon">⚙️</span> General Settings</a></li>
+                  <li><a href="#"><span class="icon">🔓</span> Logout</a></li>
+              </ul>
+            
+            </nav>
+        </aside>
+
+<main class="main-content">
+  <header class="header">
+    <div class="header-left">
+        <h1>Deleted Accounts</h1>
+    </div>
+    <div class="header-right">
+        <div class="profile">
+            <img src="Image/admin logo.png" alt="Profile" class="profile-img">
+            <button class="profile-button" id="profileButton">Profile ▼</button>
+            <div class="profile-menu" id="profileMenu">
+                <a href="#">View Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="home.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+                           
+        <!-- Table for displaying roles -->
+
+<div class="card mt-4">
+    <div class="card-body">
+      <h4>Delete Accounts Request</h4>
+      <div class="row mb-3"></div>
+      <div class="row mb-3">
+        <div class="col-md-9">
+            <div class="search-bar-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+            </div>
+        </div>
+        <div class="col-md-3 text-end"> <!-- Right-align the sort filter -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort by Date
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <li><a class="dropdown-item" href="#" id="sortNewest">Newest</a></li>
+                    <li><a class="dropdown-item" href="#" id="sortOldest">Oldest</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+      <table class="table table-bordered" id="rolesTable">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Requisition Date</th>
+            <th>Delete Request Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="rolesTableBody">
+          <tr>
+            <td>Mark</td>
+            <td>Sept 20 2024</td>
+            <td>Oct 1 2024</td>
+            <td>
+              <button class="btn btn-sm btn-danger delete-role" data-name="Mark">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Kram</td>
+            <td>Sept 25 2024</td>
+            <td>Oct 10 2024</td>
+            <td>
+              <button class="btn btn-sm btn-danger delete-role" data-name="Kram">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Kram</td>
+            <td>Sept 30 2024</td>
+            <td>Oct 15 2024</td>
+            <td>
+              <button class="btn btn-sm btn-danger delete-role" data-name="Kram">Delete</button>
+            </td>
+          </tr> <tr>
+            <td>Kram</td>
+            <td>Sept 35 2024</td>
+            <td>Oct 5 2024</td>
+            <td>
+              <button class="btn btn-sm btn-danger delete-role" data-name="Kram">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Kram</td>
+            <td>Sept 45 2024</td>
+            <td>Oct 20 2024</td>
+            <td>
+              <button class="btn btn-sm btn-danger delete-role" data-name="Kram">Delete</button>
+            </td>
+          </tr>
+          <!-- More rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<script src="scriptdelete.js"></script>
+</body>
+</html>
